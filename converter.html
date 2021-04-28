@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            celcius temperataure
+        </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,intinial-scale=1.0">
+        <style>
+           * {
+               padding:0;
+               margin:0;
+               box-sizing:border-box;
+               font-family:arial , helvetica,sans-serif;
+           }
+
+           :root {
+               --body-bg:#dff9fb;
+           }
+
+           body {
+               background-color:var(--body-bg);
+           }
+
+           .container header {
+               padding:20px;
+               text-align:center;
+           }
+
+           .container header p {
+               margin:10px 0;
+           }
+
+           .container .inputing {
+               width:30%;
+               margin:20px auto;
+               background-color:#40739e;
+               padding:12px;
+           }
+
+           .container .inputing input {
+               width:100%;
+               border-radius:4px;
+               border:solid 1px rgba(12,12,12,0.3);
+               padding:5px;
+           }
+
+           .container .inputing .valuehere {
+               margin:20px 0 0;
+           }
+
+           .container .inputing .valuehere .celcius {
+               color:white;
+               padding:12px;
+               margin:8px 0 0;
+           }
+
+           .container .inputing .valuehere div:nth-child(1){
+               background-color:#8c7ae6;
+           }
+
+           .container .inputing .valuehere div:nth-child(2) {
+               background-color:#1289A7;
+           }
+
+           .container .valuehere div:nth-child(3) {
+               background-color:#fbc531;
+           }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Temperature Converter</h1>
+                <p>made by wendi</p>
+            </header>
+            <div class="inputing">
+                <input type="number" placeholder="input value">
+                <div class="valuehere">
+                    <div class="celcius">
+                        <h3>Celcius value :</h3>
+                        <p>celcius : <span id="information1"></span></p>
+                    </div>
+                    <div class="celcius">
+                        <h3>Fahrenheit value :</h3>
+                        <p>Fahrenheit : <spa id="information2"></spa></p>
+                    </div>
+                    <div class="celcius">
+                        <h3>Kelvin value : </h3>
+                        <p>Kelvin : <span id="information3"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function converter() {
+              const input = document.querySelector('input');
+              const info = document.getElementById('information1');
+              const info2 = document.getElementById('information2');
+              const info3 = document.getElementById('information3');
+              let floating = parseFloat(input.value);
+              info.innerHTML = floating;
+              info2.innerHTML = (floating*1.8)+32 + " fahrenheit";
+              info3.innerHTML = floating + 273.15 + " kelvin";
+            }
+            
+            const input = document.querySelector('input');
+            input.addEventListener('input' , converter);
+            </script>
+    </body>
+</html>
